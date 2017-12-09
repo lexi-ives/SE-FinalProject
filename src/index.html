@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Game</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="row" id="main">
+      <div class="col-sm-3" style="background-color:grey;" id="playerwhole">
+        <p id="playertext" class="text-center">Player</p>
+
+        <!-- Players equiped items -->
+        <div id="equipment" class="text-center">
+          <div class="row">
+            <div class="col-sm-4" id="blank-equipment"></div>
+            <div class="col-sm-4"><div id="helmet"></div></div>
+            <div class="col-sm-4" id="blank-equipment"></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4"><div id="left-arm"></div></div>
+            <div class="col-sm-4"><div id="chest"></div></div>
+            <div class="col-sm-4"><div id="right-arm"></div></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4" id="blank-equipment"></div>
+            <div class="col-sm-4"><div id="legs"></div></div>
+            <div class="col-sm-4" id="blank-equipment"></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4"><div id="weapon"></div></div>
+            <div class="col-sm-4"><div id="boots"></div></div>
+            <div class="col-sm-4" id="blank-equipment"></div>
+          </div>
+        </div>
+
+        <table id="inventory">
+          <tr>
+            <td id="i1" class="slot">a</td>
+            <td id="i2" class="slot">a</td>
+            <td id="i3" class="slot">a</td>
+            <td id="i4" class="slot">a</td>
+          </tr>
+          <tr>
+            <td id="i5" class="slot">a</td>
+            <td id="i6" class="slot">a</td>
+            <td id="i7" class="slot">a</td>
+            <td id="i8" class="slot">a</td>
+          </tr>
+          <tr>
+            <td id="i9" class="slot">a</td>
+            <td id="i10" class="slot">a</td>
+            <td id="i11" class="slot">a</td>
+            <td id="i12" class="slot">a</td>
+          </tr>
+        </table>
+
+        <div id="player-stats">
+          <p id="player-stats-text" class="text-left">Stats</p>
+          <!-- add stats table when we agree on stats -->
+          <table>
+            <tr>
+              <td id="health" class="statslot">a</td>
+              <td id="stat" class="statslot">a</td>
+            </tr>
+            <tr>
+              <td id="strength" class="statslot">a</td>
+              <td id="stat" class="statslot">a</td>
+            </tr>
+            <tr>
+              <td id="speed" class="statslot">a</td>
+              <td id="stat" class="statslot">a</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="col-sm-1" style="margin:-20px;"></div>
+
+      <div class="col-sm-8" style="background-color:grey;" id="bosswhole">
+        <div id="health-bars">
+          <p class="text-center" id="playertext">Battleground</p>
+          <div id="totalplayerhpbar"><div id="playerhpbar"></div></div>
+          <div id="totalbosshpbar"><div id="bosshpbar"></div></div>
+        </div>
+        <div id="scene">
+
+        <div class="col-sm-4" id="playerimg"></div>
+        <div id="fightbuttondiv">
+          <button id="fightbutton" class="btn btn-block btn-success">FIGHT BOSS!</button>
+        </div>
+        <div class="col-sm-4" id="bossimg"></div>
+      </div>
+
+          <div class="col-sm-8" id="player-attack-div">
+            <div class="row" id="attack-row">
+              <div id="attack1">a1</div>
+              <div id="attack2">a2</div>
+              <div id="attack3">a3</div>
+              <div id="attack4">a4</div>
+            </div>
+
+            <div id="boss-info-div">
+              <p>Lvl 1</p>
+            </div>
+          </div>
+
+        <div class="text-center" id="playertext">
+          Infobox
+        </div>
+
+        <div id="infobox"></div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  </body>
+</html>
