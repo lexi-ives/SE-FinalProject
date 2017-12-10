@@ -1,6 +1,19 @@
 // Taylor Snyder, Cameron Wandfluh
 // Mizzou 2017 - Fall
 
+var itemTypes =
+[
+    "Helmet",
+    "Chestpiece",
+    "Bracers",
+    "Necklace",
+    "Ring",
+    "Pants",
+    "Boots",
+    "Sword",
+    "Hammer"
+];
+
 function Item(itemType)
 {
     this.itemType = itemType;
@@ -8,7 +21,6 @@ function Item(itemType)
     this.attributes = new Attributes();
     
     console.log('Created new Item: ' + this.name);
-    
 }
 
 function Attributes()
@@ -16,4 +28,13 @@ function Attributes()
     this.strength = Math.floor(Math.random() * 10);
     this.critChance = Math.floor(Math.random() * 5);
     this.healthBonus = Math.floor(Math.random() * 50);
+}
+
+function GenerateRandomItem()
+{
+    var randomItemType = itemTypes[Math.floor(Math.random() * itemTypes.length)];
+    
+    var newItem = new Item(randomItemType);
+    
+    return newItem;
 }

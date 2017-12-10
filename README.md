@@ -6,7 +6,7 @@ This project is our final project for the Software Engineering course at the Uni
  - Lexi Ives - Art, Design
  - Taylor Snyder - Programming
  - Cameron Wandfluh - Programming, Design
- - Cassi - Production, Media
+ - Cassi Flores - Production, Media
 
 ## Contents
  - [Description](#Description)
