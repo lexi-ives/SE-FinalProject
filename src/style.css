@@ -241,6 +241,9 @@ table {
   background-color: white;
   height: 125px;
   width: 100%;
+  padding: 50px;
+  font-size: large;
+  padding-left: 100px;
   margin-top: 25px;
 }
 
@@ -274,4 +277,10 @@ table {
   width: 100%;
   height: 10px;
   background-color: red;
+}
+
+
+
+.oncooldown{
+  opacity: 0.3;
 }
