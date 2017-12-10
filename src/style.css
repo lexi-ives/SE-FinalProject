@@ -162,14 +162,12 @@ table {
 }
 
 #playerimg{
-  background-color: red;
   height: 200px;
   float: left;
   margin: 10px;
 }
 
 #bossimg{
-  background-color: red;
   height: 200px;
   float:right;
   text-align:right;
