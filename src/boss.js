@@ -9,7 +9,7 @@ function Boss(name, level, health, damage)
     
     this.basicAttack = new Attack("basic", 5, 0, 0);
     this.heavyAttack = new Attack("heavy", 20, 0, 0);
-    this.heal = new Attack("heal", -50, 0, 0);
+    this.heal = new Heal("basic", -50, 0, 0);
     
     this.chooseRandomAttack = function()
     {
