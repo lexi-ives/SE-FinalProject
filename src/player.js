@@ -10,18 +10,18 @@ function Player(name)
     this.currHealth = 100;
     this.strength = 10;
     this.critChance = 10;
-    
+
     this.basicAttack = new Attack("basic", this.strength * this.level, 5);
-    this.basicHeal = new Heal("basic", 50, 0);
-    
+    this.strongAttack = new Attack("basic", this.strength * this.level, 5);
+    this.basicHeal = new Heal("basic", 25, 0);
+
     this.addXP = function(xpToAdd)
     {
         this.xp += xpToAdd;
     };
-    
+
     this.levelUp = function()
     {
-        
+
     };
 }
-

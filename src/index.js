@@ -51,16 +51,16 @@ $("#attack2").click(function()
 
 $("#attack3").click(function()
 {
-    player.heal.inflictDamage(player);
+    player.basicHeal.restoreHealth(player);
     currBoss.chooseRandomAttack();
     UpdateHealthBar();
 });
 
 $("#attack4").click(function()
 {
-    player.special.inflictDamage(currBoss);
+    player.strongAttack.inflictDamage(currBoss);
     currBoss.chooseRandomAttack();
-    UpdateHealthBar();
+    AliveCheck();
 });
 
 $("#fightbutton").click(function()
@@ -78,13 +78,23 @@ function UpdateHealthBar()
 
     $("#bosshpbar").animate({width: barpercent+"%"},"slow");
     $("#playerhpbar").animate({width: playerhpbar+"%"},"slow");
+    console.log(player.currHealth);
+    console.log(currBoss.currHealth);
 }
 
 function DisableButton(id){
   $(id).addClass("oncooldown");
 }
 
-function CheckMortality()
+function AliveCheck()
 {
-
+  UpdateHealthBar();
+      if(player.currHealth <= 0)
+      {
+          EndFight(false);
+      }
+      else if(currBoss.currHealth <= 0)
+      {
+          EndFight(true);
+      }
 }
