@@ -31,7 +31,6 @@ function EndFight(playerVictorious)
 $(document).ready(function() 
 {
     player = new Player("playerName");
-    
 });
 
 

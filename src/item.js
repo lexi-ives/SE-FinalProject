@@ -19,8 +19,6 @@ function Item(itemType)
     this.itemType = itemType;
     this.name = GenerateItemName(itemType);
     this.attributes = new Attributes();
-    
-    console.log('Created new Item: ' + this.name);
 }
 
 function Attributes()
