@@ -1,4 +1,4 @@
-function Attack(name, damage, cooldown) 
+function Attack(name, damage, cooldown)
 {
     this.name = name;
     this.damage = damage;
@@ -27,10 +27,10 @@ function Attack(name, damage, cooldown)
     this.inflictDamage = function(target)
     {
         target.currHealth -= this.damage;
-    }
+    };
 }
 
-function Heal(name, healthRestore, cooldown) 
+function Heal(name, healthRestore, cooldown)
 {
     this.name = name;
     this.healthRestore = healthRestore;
@@ -59,5 +59,9 @@ function Heal(name, healthRestore, cooldown)
     this.restoreHealth = function(target)
     {
         target.currHealth += this.healthRestore;
+        if(target.currHealth > target.totalHealth)
+        {
+          target.currHealth = target.totalHealth;
+        }
     }
 }

@@ -1,5 +1,6 @@
 var bossesDefeated = 0;
 var fightInProgress = false;
+var turn = 1;
 var player;
 var currBoss;
 
@@ -9,78 +10,45 @@ $(document).ready(function()
     DisableButton("#attack2");
     DisableButton("#attack3");
     DisableButton("#attack4");
-    
+
     player = new Player(GetPlayerName());
     $("#playertext").text(player.name);
+    UpdatePlayerStats();
 });
-
-function BeginFight()
-{
-    fightInProgress = true;
-    currBoss = GenerateRandomBoss();
-    
-    EnableButton("#attack1");
-    EnableButton("#attack2");
-    EnableButton("#attack3");
-    EnableButton("#attack4");
-    
-    $("#infobox").text("A wild " + currBoss.name + " appears!");
-}
-
-function EndFight(playerVictorious)
-{
-    fightInProgress = false;
-
-
-    if(playerVictorious)
-    {
-        player.addXP(currBoss.xpReward);
-        bossesDefeated++;
-    }
-    else
-    {
-        //
-    }
-
-}
 
 $("#attack1").click(function()
 {
-    if(fightInProgress)
+    if(fightInProgress && player.basicAttack.isOnCooldown == false)
     {
-        player.basicAttack.inflictDamage(currBoss);
-        currBoss.chooseRandomAttack();
-        AliveCheck();
+        AttackCycle(player.basicAttack);
+        turn++;
     }
 });
 
 $("#attack2").click(function()
 {
-    if(fightInProgress)
+    if(fightInProgress && player.strongAttack.isOnCooldown == false)
     {
-        player.strongAttack.inflictDamage(currBoss);
-        currBoss.chooseRandomAttack();
-        AliveCheck();
+        AttackCycle(player.strongAttack);
+        turn++;
     }
 });
 
 $("#attack3").click(function()
 {
-    if(fightInProgress)
+    if(fightInProgress && player.basicHeal.isOnCooldown == false)
     {
-        player.basicHeal.restoreHealth(player);
-        currBoss.chooseRandomAttack();
-        AliveCheck();
+        HealCycle(player.basicHeal);
+        turn++
     }
 });
 
 $("#attack4").click(function()
 {
-    if(fightInProgress)
+    if(fightInProgress && player.specialAttack.isOnCooldown == false)
     {
-        player.strongAttack.inflictDamage(currBoss);
-        currBoss.chooseRandomAttack();
-        AliveCheck();
+        AttackCycle(player.specialAttack);
+        turn++
     }
 });
 
@@ -97,8 +65,18 @@ function UpdateHealthBar()
 
     if (playerhpbar > 100){playerhpbar = 100;}
 
-    $("#bosshpbar").animate({width: barpercent+"%"},"slow");
-    $("#playerhpbar").animate({width: playerhpbar+"%"},"slow");
+    $("#bosshpbar").animate({width: barpercent+"%"},"normal");
+    $("#bosshptext").text("Hp "+currBoss.currHealth);
+    $("#playerhpbar").animate({width: playerhpbar+"%"},"normal");
+    $("#playerhptext").text("Hp "+player.currHealth);
+
+    //console.log(player.currHealth);
+}
+
+function UpdatePlayerStats(){
+  $("#health").text(player.totalHealth);
+  $("#strength").text(player.strength);
+  $("#speed").text(player.level);
 }
 
 function DisableButton(id)
@@ -111,30 +89,16 @@ function EnableButton(id)
     $(id).removeClass("disabled");
 }
 
-function AliveCheck()
-{
-    UpdateHealthBar();
-    
-    if(player.currHealth <= 0)
-    {
-        EndFight(false);
-    }
-    else if(currBoss.currHealth <= 0)
-    {
-        EndFight(true);
-    }
-}
-
 function GetPlayerName()
 {
     var playerResponse = prompt("Enter your name!");
-    
+
     if(playerResponse != null && playerResponse != "")
     {
         return playerResponse;
-    }   
+    }
     else
     {
-        return "Tim";
+        return "Paul Bunyan";
     }
 }

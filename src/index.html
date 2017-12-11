@@ -65,16 +65,16 @@
           <!-- add stats table when we agree on stats -->
           <table>
             <tr>
+              <td id="stat" class="statslot">Level</td>
+              <td id="speed" class="statslot"></td>
+            </tr>
+            <tr>
               <td id="stat" class="statslot">Health</td>
-              <td id="health" class="statslot">a</td>
+              <td id="health" class="statslot"></td>
             </tr>
             <tr>
               <td id="stat" class="statslot">Strength</td>
-              <td id="strength" class="statslot">a</td>
-            </tr>
-            <tr>
-              <td id="stat" class="statslot">Speed</td>
-              <td id="speed" class="statslot">a</td>
+              <td id="strength" class="statslot"></td>
             </tr>
           </table>
         </div>
@@ -85,8 +85,8 @@
       <div class="col-sm-8" style="background-color:grey;" id="bosswhole">
         <div id="health-bars">
           <p class="text-center" id="playertext">Battleground</p>
-          <div id="totalplayerhpbar"><div id="playerhpbar"></div>Hp 100</div>
-          <div id="totalbosshpbar"><div id="bosshpbar"></div>Hp 100</div>
+          <div id="totalplayerhpbar"><div id="playerhpbar"></div><p id="playerhptext">Hp 100</p></div>
+          <div id="totalbosshpbar"><div id="bosshpbar"></div><p id="bosshptext">Hp 100</p></div>
         </div>
         <div id="scene">
 
@@ -106,7 +106,7 @@
             </div>
 
             <div id="boss-info-div">
-              <p>Lvl 1</p>
+              <p id="bosslvl">Boss Level: 1</p>
             </div>
           </div>
 
@@ -127,5 +127,6 @@
     <script src="player.js"></script>
     <script src="boss.js"></script>
     <script src="moves.js"></script>
+    <script src="fight.js"></script>
   </body>
 </html>
