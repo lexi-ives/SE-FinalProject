@@ -35,6 +35,8 @@ function EndFight(playerVictorious)
     if(playerVictorious)
     {
         player.addXP(currBoss.xpReward);
+        player.currHealth = player.totalHealth;
+        UpdateHealthBar();
         bossesDefeated++;
         $("#infobox").text(player.name + " Wins!");
     }

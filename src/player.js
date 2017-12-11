@@ -24,9 +24,21 @@ function Player(name)
         if(this.currXP >= this.nextLevelXP)
         {
             this.level++;
-            UpdatePlayerStats();
             this.currXP -= this.nextLevelXP;
             this.nextLevelXP += 50;
+
+            //leveling stats
+            this.totalHealth += 50;
+            this.strength += 5;
+            this.critChance += 5;
+
+            //updating attacks with new stats
+            this.basicAttack = new Attack("#attack1", this.strength * this.level, 0);
+            this.strongAttack = new Attack("#attack2", this.strength * this.level * 2, 3);
+            this.basicHeal = new Heal("#attack3", 25 * this.level, 3);
+            this.specialAttack = new Attack("#attack4", this.strength * this.level * 5, 10);
+
+            UpdatePlayerStats();
         }
 
     };
