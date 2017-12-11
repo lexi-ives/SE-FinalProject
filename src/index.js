@@ -7,7 +7,7 @@ var currBoss;
 function BeginFight()
 {
     fightInProgress = true;
-    
+
     currBoss = GenerateRandomBoss();
     // more
 }
@@ -15,7 +15,8 @@ function BeginFight()
 function EndFight(playerVictorious)
 {
     fightInProgress = false;
-    
+
+
     if(playerVictorious)
     {
         player.addXP(currBoss.xpReward);
@@ -25,25 +26,46 @@ function EndFight(playerVictorious)
     {
         //
     }
-    
+
 }
 
-$(document).ready(function() 
+$(document).ready(function()
 {
     player = new Player("playerName");
-    
+
 });
 
-
-$("#attack2").click(function() 
-{ 
+$("#attack1").click(function()
+{
     player.basicAttack.inflictDamage(currBoss);
     currBoss.chooseRandomAttack();
     UpdateHealthBar();
 });
 
-$("#fightbutton").click(function() 
+$("#attack2").click(function()
 {
+    player.strongAttack.inflictDamage(currBoss);
+    currBoss.chooseRandomAttack();
+    UpdateHealthBar();
+});
+
+$("#attack3").click(function()
+{
+    player.heal.inflictDamage(player);
+    currBoss.chooseRandomAttack();
+    UpdateHealthBar();
+});
+
+$("#attack4").click(function()
+{
+    player.special.inflictDamage(currBoss);
+    currBoss.chooseRandomAttack();
+    UpdateHealthBar();
+});
+
+$("#fightbutton").click(function()
+{
+  $("#bosshpbar").animate({width: 100+"%"},"fast");
    BeginFight();
 });
 
@@ -56,4 +78,13 @@ function UpdateHealthBar()
 
     $("#bosshpbar").animate({width: barpercent+"%"},"slow");
     $("#playerhpbar").animate({width: playerhpbar+"%"},"slow");
+}
+
+function DisableButton(id){
+  $(id).addClass("oncooldown");
+}
+
+function CheckMortality()
+{
+
 }
