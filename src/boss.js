@@ -7,9 +7,9 @@ function Boss(name, level, health, damage)
     this.damage = level * damage;
     this.xpReward = 50;
     
-    this.basicAttack = new Attack("basic", 5, 0, 0);
-    this.heavyAttack = new Attack("heavy", 20, 0, 0);
-    this.heal = new Heal("basic", -50, 0, 0);
+    this.basicAttack = new Attack("basic-attack", 5, 0);
+    this.heavyAttack = new Attack("heavy-attack", 20, 0);
+    this.basicHeal = new Heal("basic-heal", 50, 0);
     
     this.chooseRandomAttack = function()
     {
@@ -20,8 +20,16 @@ function Boss(name, level, health, damage)
 
 var BossNames =
 [
-    "Ted",
-    "Biggie"
+    "Dagr",
+    "Eligia",
+    "Alberich",
+    "Iunia",
+    "Manuel",
+    "Ortrun",
+    "Muriel",
+    "Jayadeva",
+    "Alfarr",
+    "Ermingard"
 ];
 
 function GenerateRandomBoss()

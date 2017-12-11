@@ -36,3 +36,4 @@ function GenerateRandomItem()
     
     return newItem;
 }
+
