@@ -88,17 +88,3 @@ function EnableButton(id)
 {
     $(id).removeClass("disabled");
 }
-
-function GetPlayerName()
-{
-    var playerResponse = prompt("Enter your name!");
-
-    if(playerResponse != null && playerResponse != "")
-    {
-        return playerResponse;
-    }
-    else
-    {
-        return "Paul Bunyan";
-    }
-}

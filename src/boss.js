@@ -41,6 +41,22 @@ var BossNames =
 function GenerateRandomBoss()
 {
     var newBoss = new Boss(BossNames[Math.floor(Math.random() * BossNames.length)], bossesDefeated + 1, 100, 10);
-
+    if(bossesDefeated > 0) { GetBossImage(); }
     return newBoss;
+}
+
+function GetBossImage()
+{
+  var bossImg =
+  [
+    'images/slime.png',
+    'images/ghost.png',
+    'images/golem.png',
+    'images/snake.png',
+    'images/bat.png'
+  ]
+
+  var newBoss = bossImg[Math.floor(Math.random() * bossImg.length)]
+
+  $("#bossimg").html("<img src='"+newBoss+"' height='220' width='220'></img>");
 }
