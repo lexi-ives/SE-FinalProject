@@ -282,8 +282,6 @@ table {
   background-color: red;
 }
 
-
-
-.oncooldown{
+.disabled{
   opacity: 0.3;
 }
