@@ -244,10 +244,11 @@ table {
   background-color: white;
   height: 125px;
   width: 100%;
-  padding: 50px;
+  padding: 30px;
   font-size: large;
-  padding-left: 100px;
+  padding-left: 50px;
   margin-top: 25px;
+  overflow-y: auto;
 }
 
 #totalbosshpbar {

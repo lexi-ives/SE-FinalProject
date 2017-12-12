@@ -17,7 +17,7 @@ function BeginFight()
     player.basicHeal.isOnCooldown = false;
     player.specialAttack.isOnCooldown = false;
 
-    $("#infobox").text("A wild " + currBoss.name + " appears!");
+    $("#infobox").prepend("A wild " + currBoss.name + " appears! <br/>");    
     
     $("#fightbutton").visibilityToggle();
 }
@@ -40,11 +40,11 @@ function EndFight(playerVictorious)
         player.currHealth = player.totalHealth;
         UpdateHealthBar();
         bossesDefeated++;
-        $("#infobox").text(player.name + " Wins!");
+        $("#infobox").prepend(player.name + " Wins! <br/>");
     }
     else
     {
-      $("#infobox").text(currBoss.name + " Wins!");
+      $("#infobox").prepend(currBoss.name + " Wins! <br/>");
       bossesDefeated = 0;
     }
     
@@ -67,7 +67,7 @@ function AttackCycle(id){
   if(Critical()) { id.inflictDamage(currBoss); }
 
   id.inflictDamage(currBoss);
-  $("#infobox").text("Turn: " + turn + " " + player.name + " did " + id.damage + " damage!");
+  $("#infobox").prepend("Turn: " + turn + " " + player.name + " did " + id.damage + " damage! <br/>");
   if(AliveCheck()){ return; }
   fightInProgress = false;
 
@@ -87,7 +87,7 @@ function AttackCycle(id){
 //same as attack but healing
 function HealCycle(id){
   id.restoreHealth(player);
-  $("#infobox").text("Turn: "+ turn + " " + player.name + " healed for " + id.healthRestore + "!");
+  $("#infobox").prepend("Turn: "+ turn + " " + player.name + " healed for " + id.healthRestore + "! <br/>");
   currBoss.chooseRandomAttack();
 
   if(AliveCheck()){ return; }
