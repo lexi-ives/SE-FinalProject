@@ -1,5 +1,7 @@
 function BeginFight()
 {
+    $("#playerimg").fadeIn();
+    $("#bossimg").fadeIn();
     console.log(bossesDefeated);
     fightInProgress = true;
     currBoss = GenerateRandomBoss();
@@ -41,12 +43,14 @@ function EndFight(playerVictorious)
         UpdateHealthBar();
         bossesDefeated++;
         $("#infobox").prepend(player.name + " Wins! <br/>");
+        $("#bossimg").fadeOut();
     }
     else
     {
       $("#infobox").prepend(currBoss.name + " Wins! <br/>");
       $("#infobox").prepend("You have lost! You will retain your level, but not your equipment! Try again! <br/>");
       bossesDefeated = 0;
+      $("#playerimg").fadeOut();
     }
     
     $("#fightbutton").visibilityToggle();
