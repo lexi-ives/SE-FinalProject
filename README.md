@@ -1,5 +1,7 @@
 # Software Engineering - Final Project
 
+<img src="http://tsny.io/SE-FinalProject/src/images/player.png" height=300 align="right">
+
 This project is our final project for the Software Engineering course at the University of Missouri - Columbia Fall 2017 semester.
 
 # Team
