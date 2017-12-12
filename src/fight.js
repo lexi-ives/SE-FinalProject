@@ -69,10 +69,13 @@ function Critical()
 function AttackCycle(id){
 
   //double damage if Critical
-  if(Critical()) { id.inflictDamage(currBoss); }
+  if(Critical()) 
+  { 
+      id.inflictDamage(currBoss); 
+      $("#infobox").prepend(player.name + " gotta critical hit! The attack hit twice! <br/>");
+  }
 
   id.inflictDamage(currBoss);
-  $("#infobox").prepend("Turn: " + turn + " " + player.name + " did " + id.damage + " damage! <br/>");
   if(AliveCheck()){ return; }
   fightInProgress = false;
 
@@ -92,7 +95,6 @@ function AttackCycle(id){
 //same as attack but healing
 function HealCycle(id){
   id.restoreHealth(player);
-  $("#infobox").prepend("Turn: "+ turn + " " + player.name + " healed for " + id.healthRestore + "! <br/>");
   currBoss.chooseRandomAttack();
 
   if(AliveCheck()){ return; }

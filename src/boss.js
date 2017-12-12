@@ -35,7 +35,16 @@ var BossNames =
     "Muriel",
     "Jayadeva",
     "Alfarr",
-    "Ermingard"
+    "Ermingard",
+    "Ahriman",
+    "Remus",
+    "Ninian",
+    "Phokas",
+    "Constantia",
+    "Primus",
+    "Llyr",
+    "Nuallán",
+    "Leutgard"
 ];
 
 function GenerateRandomBoss()

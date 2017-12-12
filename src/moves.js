@@ -26,6 +26,7 @@ function Attack(name, damage, cooldown)
 
     this.inflictDamage = function(target)
     {
+        $("#infobox").prepend(target.name + " takes " + this.damage + " damage! <br/>");
         target.currHealth -= this.damage;
     };
 }
@@ -58,6 +59,7 @@ function Heal(name, healthRestore, cooldown)
 
     this.restoreHealth = function(target)
     {
+        $("#infobox").prepend(target.name + " heals for " + this.healthRestore + "!<br/>");
         target.currHealth += this.healthRestore;
         if(target.currHealth > target.totalHealth)
         {
