@@ -41,7 +41,7 @@ var BossNames =
 function GenerateRandomBoss()
 {
     var newBoss = new Boss(BossNames[Math.floor(Math.random() * BossNames.length)], bossesDefeated + 1, 100, 10);
-    if(bossesDefeated > 0) { GetBossImage(); }
+    GetBossImage();
     return newBoss;
 }
 

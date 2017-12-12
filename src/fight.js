@@ -45,6 +45,7 @@ function EndFight(playerVictorious)
     else
     {
       $("#infobox").prepend(currBoss.name + " Wins! <br/>");
+      $("#infobox").prepend("You have lost! You will retain your level, but not your equipment! Try again! <br/>");
       bossesDefeated = 0;
     }
     
