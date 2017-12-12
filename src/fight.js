@@ -18,6 +18,8 @@ function BeginFight()
     player.specialAttack.isOnCooldown = false;
 
     $("#infobox").text("A wild " + currBoss.name + " appears!");
+    
+    $("#fightbutton").visibilityToggle();
 }
 
 function EndFight(playerVictorious)
@@ -45,6 +47,8 @@ function EndFight(playerVictorious)
       $("#infobox").text(currBoss.name + " Wins!");
       bossesDefeated = 0;
     }
+    
+    $("#fightbutton").visibilityToggle();
 }
 
 function Critical()
@@ -119,21 +123,35 @@ function AliveCheck()
 
 function CooldownDec()
 {
-  player.basicAttack.decrimentCooldown();
-  player.strongAttack.decrimentCooldown();
-  player.basicHeal.decrimentCooldown();
-  player.specialAttack.decrimentCooldown();
+    player.basicAttack.decrimentCooldown();
+    player.strongAttack.decrimentCooldown();
+    player.basicHeal.decrimentCooldown();
+    player.specialAttack.decrimentCooldown();
 
-  if(player.basicAttack.isOnCooldown == false){
-    EnableButton(player.basicAttack.name);
-  }
-  if(player.strongAttack.isOnCooldown == false){
-    EnableButton(player.strongAttack.name);
-  }
-  if(player.basicHeal.isOnCooldown == false){
-    EnableButton(player.basicHeal.name);
-  }
-  if(player.specialAttack.isOnCooldown == false){
-    EnableButton(player.specialAttack.name);
-  }
+    if(player.basicAttack.isOnCooldown == false){
+        EnableButton(player.basicAttack.name);
+    }
+    if(player.strongAttack.isOnCooldown == false){
+        EnableButton(player.strongAttack.name);
+    }
+    if(player.basicHeal.isOnCooldown == false){
+        EnableButton(player.basicHeal.name);
+    }
+    if(player.specialAttack.isOnCooldown == false){
+        EnableButton(player.specialAttack.name);
+    }
 }
+
+jQuery.fn.visible = function() {
+    return this.css('visibility', 'visible');
+};
+
+jQuery.fn.invisible = function() {
+    return this.css('visibility', 'hidden');
+};
+
+jQuery.fn.visibilityToggle = function() {
+    return this.css('visibility', function(i, visibility) {
+        return (visibility == 'visible') ? 'hidden' : 'visible';
+    });
+};
